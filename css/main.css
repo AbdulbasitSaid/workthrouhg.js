@@ -10,6 +10,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+.relative {
+  position: relative;
+}
 .inline {
   display: inline;
 }

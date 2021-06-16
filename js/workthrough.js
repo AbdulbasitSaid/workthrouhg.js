@@ -30,33 +30,31 @@ let showWorkthroughDialog = (targetElementId, offsetPosition, heading, content) 
     headingElement.innerHTML = heading;
     let contentElement = document.getElementById('workthough_content');
     contentElement.innerHTML = content;
-    targetElement.classList.add('relative');
     targetElement.appendChild(dailogElement);
-    dailogElement.classList.add(offsetPosition);
-    console.log(offsetPosition)
+    dailogElement.classList.add('bottom-left');
     dailogElement.classList.remove('hide');
+    targetElement.classList.add('relative');
 }
 
 let next = () => {
 
     let last = targets.length - 1;
     if (index < targets.length - 1) {
-        console.log(`current target is  ${targets[index]}`)
         index++;
         showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
-
+        console.log(index)
     }
     else {
         index = last;
         showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
+        console.log(index)
 
-        console.log(`current target is  ${targets[last]}`)
     }
 
 };
 let prev = () => {
     if (index > 0) {
-        console.log(`current target is ${targets[index]}`)
+        console.log(`current target is ${targets[index]}`);
         index--;
         showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
 
