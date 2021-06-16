@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>cloned google site for workthrough</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/209a4dbbb9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/workthrough.css">
+</head>
+
+<body>
+    <div class="workthrough-body hide">
+        <div class="workthrough-dialog">
+
+            <div class="content">
+                <span><i class="far fa-times-circle"></i></span>
+                <h3 id="workthough_heading">Welcome to SchooTry</h3>
+                <p id="workthough_content">
+                    Take a few minutes for workthrough
+                </p>
+                <div class="prev-next">
+                    <input type="button" class="btn" value="prev" id="prev" onclick="Workthough.next()">
+                    <input type="button" class="btn" value="next" id="next">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div style="display: flex;">
+            <div id="about">
+                <a href="https://about.google.com/" id="">
+                    About
+                </a>
+            </div>
+            <div id="store"><a href="https://store.google.com/">Store</a></div>
+        </div>
+        <div id="urc">
+            <div><a href="https://mail.google.com/" id="gmail">Gmail</a><a href="https://images.google.com/">Images</a>
+            </div>
+            <div id="account"><span class="material-icons" id="apps" title="Google apps" id="apps">apps</span><a
+                    class="link" id="sign_in" href="https://accounts.google.com/" id="sign">Sign
+                    in</a></div>
+        </div>
+    </header>
+    <div id="container"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+
+
+        <form>
+            <div id="search_container" id="search-bar"><span class="material-icons" id="search_icon">search</span>
+                <input id="search" type="search" name="q" autocomplete="off" required="required"
+                    id="workthrough1" /><span class="material-icons" id="mic" title="Search by voice">mic</span>
+
+                <!-- temp dialog -->
+
+                <!-- end temp dailog -->
+            </div>
+            <div id="buttons_container">
+                <input type="submit" value="Google Search" id="google-search" /><a class="link" id="lucky"
+                    href="https://www.google.com/doodles" id="felling-lucky">I'm
+                    Feeling Lucky</a>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div><a href="https://ads.google.com/" id="advertising">Advertising</a><a
+                href="https://smallbusiness.withgoogle.com/">Business</a><a
+                href="https://www.google.com/search/howsearchworks">How Search works</a>
+        </div>
+        <div><a href="https://policies.google.com/privacy">Privacy</a><a
+                href="https://policies.google.com/terms">Terms</a><a href="#" id="settings">Settings</a>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+.workthrough-body {
+  z-index: 10;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: inline-block;
+}
+.relative {
+  position: relative;
+}
+.bottom-left {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  top: 120%;
+  left: 0px;
+  offset-position: auto;
+  offset-anchor: center;
+  offset-path: ray(45deg);
+}
+.temp {
+  background-color: pink;
+}
+.workthrough-dialog {
+  background-color: white;
+  padding: 1rem;
+  min-width: 20rem;
+  min-height: 10rem;
+  max-width: 100rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content > span {
+  position: absolute;
+  padding: 10px;
+  right: 0px;
+  top: 0px;
+}
+.prev-next {
+  display: flex;
+  padding: 0.25em;
+  justify-content: space-around;
+}
+.btn {
+  padding: 6px 1.3em 6px 1.3em;
+  background: #4e9de6;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.arrow {
+  position: absolute;
+  background-color: inherit;
+
+  z-index: -1;
+  overflow: visible;
+  width: 30px;
+  height: 30px;
+  margin-top: calc(-40px + 1rem);
+  content: "";
+  transform: rotate(45deg);
+}

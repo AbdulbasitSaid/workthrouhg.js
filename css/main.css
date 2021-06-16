@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.inline {
+  display: inline;
+}
+a {
+  margin: 0.4em;
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header,
+footer,
+#urc,
+#account,
+#container {
+  display: flex;
+  align-items: center;
+}
+
+header,
+footer {
+  justify-content: space-between;
+  padding: 1em;
+}
+
+footer,
+#goog_search,
+#lucky {
+  background-color: #ebebeb;
+}
+
+footer a,
+.material-icons {
+  color: DimGray;
+}
+
+footer {
+  margin-top: auto;
+}
+
+form {
+  margin-top: 1em;
+}
+
+.link {
+  text-decoration: none !important;
+  user-select: none;
+}
+
+.material-icons {
+  user-select: none;
+  margin: 0.4em;
+}
+
+#urc div {
+  margin: 0 0.5em 0 0.5em;
+}
+
+#sign_in {
+  color: white;
+  padding: 0.8em 2em 0.8em 2em;
+  background-color: #0064ff;
+  border-radius: 0.3em;
+}
+#sign_in:hover {
+  background-color: #197dff;
+}
+#sign_in:active {
+  background-color: #3296ff;
+}
+
+#container {
+  margin: auto;
+  flex-direction: column;
+}
+
+#apps,
+#mic {
+  cursor: pointer;
+}
+#workthrough1 {
+  position: relative;
+}
+#search_container {
+  display: flex;
+  border: 1px solid gainsboro;
+  border-radius: 2em;
+  position: relative;
+}
+#search_container:hover,
+#search_container:focus-within {
+  border-color: transparent;
+  box-shadow: 0 1px 1px 1px gainsboro;
+}
+
+#search {
+  border: none;
+  width: 75vw;
+  max-width: 30rem;
+}
+#search:focus {
+  outline: none;
+}
+
+#buttons_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+#goog_search {
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.4em;
+}
+
+#goog_search,
+#lucky {
+  padding: 0.8em 2em 0.8em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+}
+#goog_search:hover,
+#lucky:hover {
+  border-color: lightgray;
+}
+#goog_search:active,
+#lucky:active {
+  border-color: #0064ff;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+
+  footer {
+    text-align: center;
+    flex-direction: column;
+  }
+}
