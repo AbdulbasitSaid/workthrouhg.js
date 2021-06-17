@@ -31,16 +31,32 @@ let showWorkthroughDialog = (targetElementId, offsetPosition, heading, content) 
     let contentElement = document.getElementById('workthough_content');
     contentElement.innerHTML = content;
     targetElement.appendChild(dailogElement);
-    dailogElement.classList.add('bottom-left');
+    setOffestPosition(offsetPosition);
     dailogElement.classList.remove('hide');
     targetElement.classList.add('relative');
 }
-
+let setOffestPosition = offestPossition => {
+    let position = null;
+    if (dailogElement.classList.contains('bottom-left')) {
+        dailogElement.classList.remove('bottom-left');
+    }
+    if (dailogElement.classList.contains('bottom-right')) {
+        dailogElement.classList.remove('bottom-right');
+    }
+    if (dailogElement.classList.contains('bottom-right')) {
+        dailogElement.classList.remove('bottom-right');
+    }
+    dailogElement.classList.add(offestPossition);
+    return position;
+}
 let next = () => {
 
     let last = targets.length - 1;
     if (index < targets.length - 1) {
+
         index++;
+        console.log(targets[index].offset_position)
+
         showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
         console.log(index)
     }
