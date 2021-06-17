@@ -25,7 +25,10 @@ Workthrough.initialize(
             "id": 'search_container', 'heading': 'search quary here', 'content': 'put your search quary here', 'offset_position': 'bottom-left',
         },
         {
-            "id": 'advertising', 'heading': 'add heres', 'content': 'Quis ea consequat aute laborum mollit veniam mollit non incididunt proident.', 'offset_position': 'bottom-left',
+            "id": 'advertising', 'heading': 'add heres', 'content': 'Quis ea consequat aute laborum mollit veniam mollit non incididunt proident.', 'offset_position': 'top-left',
+        },
+        {
+            "id": 'settings', 'heading': 'edit settings', 'content': 'Quis ea consequat aute laborum mollit veniam mollit non incididunt proident.', 'offset_position': 'top-right',
         },
 
 

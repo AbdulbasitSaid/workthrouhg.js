@@ -46,6 +46,12 @@ let setOffestPosition = offestPossition => {
     if (dailogElement.classList.contains('bottom-right')) {
         dailogElement.classList.remove('bottom-right');
     }
+    if (dailogElement.classList.contains('top-right')) {
+        dailogElement.classList.remove('top-right');
+    }
+    if (dailogElement.classList.contains('top-left')) {
+        dailogElement.classList.remove('top-left');
+    }
     dailogElement.classList.add(offestPossition);
     return position;
 }
