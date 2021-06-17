@@ -10,13 +10,21 @@
 .relative {
   position: relative;
 }
-.bottom-left {
+.bottom-right {
   display: inline-block;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  top: 120%;
+  offset-position: auto;
+  offset-anchor: center;
+  offset-path: ray(45deg);
+}
+.bottom-left {
   position: absolute;
   left: 0px;
   bottom: 0px;
   top: 120%;
-  left: 0px;
   offset-position: auto;
   offset-anchor: center;
   offset-path: ray(45deg);
