@@ -65,7 +65,7 @@
 }
 @keyframes shake {
   50% {
-    transform: translateX(4%);
+    transform: translateY(4%);
   }
 }
 .content {
@@ -93,7 +93,6 @@
 .arrow {
   position: absolute;
   background-color: inherit;
-
   z-index: -1;
   overflow: visible;
   width: 30px;
