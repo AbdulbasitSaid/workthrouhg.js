@@ -34,6 +34,7 @@ let showWorkthroughDialog = (targetElementId, offsetPosition, heading, content) 
     setOffestPosition(offsetPosition);
     dailogElement.classList.remove('hide');
     targetElement.classList.add('relative');
+    targetElement.scrollIntoView({ behavior: 'smooth' });
 }
 let setOffestPosition = offestPossition => {
     let position = null;
