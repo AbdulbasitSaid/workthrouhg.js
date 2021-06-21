@@ -35,9 +35,20 @@ let showWorkthroughDialog = (targetElementId, offsetPosition, heading, content) 
     dailogElement.classList.remove('hide');
     targetElement.classList.add('relative');
     targetElement.scrollIntoView({ behavior: 'smooth' });
+    if (index < 1) {
+        document.getElementById('prev').style.display = 'none';
+    } else {
+        document.getElementById('prev').style.display = 'block';
+    }
+
+    if (index >= targets.length - 1) {
+        document.getElementById('next').style.display = 'none';
+
+    } else {
+        document.getElementById('next').style.display = 'block';
+    }
 }
 let setOffestPosition = offestPossition => {
-    let position = null;
     if (dailogElement.classList.contains('bottom-left')) {
         dailogElement.classList.remove('bottom-left');
     }
@@ -47,6 +58,9 @@ let setOffestPosition = offestPossition => {
     if (dailogElement.classList.contains('bottom-right')) {
         dailogElement.classList.remove('bottom-right');
     }
+    if (dailogElement.classList.contains('bottom-center')) {
+        dailogElement.classList.remove('bottom-center');
+    }
     if (dailogElement.classList.contains('top-right')) {
         dailogElement.classList.remove('top-right');
     }
@@ -54,7 +68,6 @@ let setOffestPosition = offestPossition => {
         dailogElement.classList.remove('top-left');
     }
     dailogElement.classList.add(offestPossition);
-    return position;
 }
 let next = () => {
 

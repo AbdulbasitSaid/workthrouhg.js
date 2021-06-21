@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth !important;
 }
+p {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+}
 .workthrough-body {
   /* width: 0px; */
   z-index: 10000 !important;
@@ -42,6 +47,16 @@ html {
   offset-anchor: center !important;
   offset-path: ray(45deg) !important;
 }
+.bottom-center {
+  position: absolute !important;
+  left: 50%;
+  transform: translate(-50%);
+
+  top: 120% !important;
+  offset-position: auto !important;
+  offset-anchor: center !important;
+  offset-path: ray(45deg) !important;
+}
 .top-left {
   position: absolute !important;
   left: 0px;
@@ -55,12 +70,9 @@ html {
 }
 .workthrough-dialog {
   background-color: white !important;
-  padding: 1rem !important;
-  min-width: 20rem !important;
-  min-height: 10rem !important;
-  max-width: 100rem !important;
   position: relative !important;
   display: flex !important;
+  width: 30rem !important;
   justify-content: center !important;
   color: black !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
@@ -72,20 +84,30 @@ html {
   }
 }
 .content {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
+  padding: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.content > span {
-  position: absolute !important;
-  padding: 10px;
-  right: 0px;
-  top: 0px;
+
+.dialog-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+#workthough_content {
+  font-size: small;
+  width: 20rem;
+  font-weight: 400;
+  font-style: normal;
+  color: gray;
+  overflow-wrap: break-word !important;
+  text-transform: lowercase;
 }
 .prev-next {
   display: flex !important;
-  padding: 0.25em;
-  justify-content: space-around !important;
+  justify-content: space-evenly !important;
+  margin-top: 20px;
 }
 .btn {
   padding: 6px 1.3em 6px 1.3em !important;
