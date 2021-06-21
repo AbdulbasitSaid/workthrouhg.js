@@ -1,4 +1,4 @@
-import * as Workthrough from "./workthrough.js";
+import * as Workthrough from "./walkthrough.js";
 document.querySelector("form").addEventListener("submit", event => {
     event.preventDefault();
 });
