@@ -110,9 +110,9 @@ p {
   margin-top: 20px;
 }
 .btn {
-  padding: 6px 1.3em 6px 1.3em !important;
+  padding: 4px 0.5em 4px 1.5em !important;
   background: #4e9de6 !important;
-
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
 }
 .arrow {
