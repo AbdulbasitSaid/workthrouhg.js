@@ -4,33 +4,19 @@ document.querySelector("form").addEventListener("submit", event => {
 });
 
 
-Workthrough.initialize(
+document.getElementById('help').addEventListener('click', () => Workthrough.initialize(
     [
         {
-            "id": 'about', 'heading': 'learning more about google', 'content': 'you will learn more by by navigating to about page', 'offset_position': 'bottom-left',
+            "id": 'about', 'content': 'click the next icon to move to the next tutorial. click the prev button the move to the preveus tutorail. click the close icon to close the tutorial.', 'offset_position': 'right',
         },
         {
-            "id": 'store', 'heading': 'chech out the store', 'content': 'you will learn more by by navigating to store page', 'offset_position': 'bottom-left',
+            "id": 'store', 'content': 'In laborum commodo aute aliqua reprehenderit magna ut duis cupidatat labore laboris eiusmod duis commodo.', 'offset_position': 'right',
         },
         {
-            "id": 'gmail', 'heading': 'read your email', 'content': 'read your email heres', 'offset_position': 'bottom-right',
+            "id": 'account', 'content': 'In laborum commodo aute aliqua reprehenderit magna ut duis cupidatat labore laboris eiusmod duis commodo.', 'offset_position': 'left',
         },
-        {
-            "id": 'apps', 'heading': 'find google apps', 'content': 'get hacking using google apps', 'offset_position': 'bottom-right',
-        },
-        {
-            "id": 'sign_in', 'heading': 'Sign in here', 'content': 'to get the best experience by signing in', 'offset_position': 'bottom-right',
-        },
-        {
-            "id": 'search_container', 'heading': 'search quary here', 'content': 'put your search quary here', 'offset_position': 'bottom-left',
-        },
-        {
-            "id": 'advertising', 'heading': 'add heres', 'content': 'Quis ea consequat aute laborum mollit veniam mollit non incididunt proident.', 'offset_position': 'top-left',
-        },
-        {
-            "id": 'settings', 'heading': 'edit settings', 'content': 'Quis ea consequat aute laborum mollit veniam mollit non incididunt proident.', 'offset_position': 'top-right',
-        },
+
 
 
     ]
-);
+));

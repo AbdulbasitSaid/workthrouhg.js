@@ -10,31 +10,46 @@
 </head>
 
 <body>
-    <!-- dialog -->
-    <!-- dialog -->
-    <div class="workthrough-body hide">
-        <div class="workthrough-dialog">
+    <div class="shade" id="shade" style="display: none;"></div>
 
+    <!-- dialog -->
+    <div class="workthrough_body hide" id="workthrough_body">
+        <div class="workthrough_dialog">
+            <!-- pointer -->
+            <div id="dialog_pointer"></div>
+            <!-- end pointer -->
+            <div id="close_btn">
+                <svg width="10" height="10">
+                    <line x1="0" x2="10" y1="0" y2="10" style="stroke:black;stroke-width:2"></line>
+                    <line x1="10" x2="0" y1="0" y2="10" style="stroke:black;stroke-width:2"></line>
+                </svg>
+            </div>
             <div class="content">
-                <div class="dialog-heading">
-                    <h3 id="workthough_heading">Welcome to SchooTry</h3>
-                    <span><i class="far fa-times-circle"></i></span>
+                <div id="workthough_content" class="workthough_content">
+                    <!-- you text here -->
+                </div>
+                <div id="progress_bar" class="progress_bar"></div>
+                <div id="dialog_bottom" class="dialog_bottom">
+                    <!-- progress count -->
+                    <div id="steps" class="steps">
+                        <span id="step_count"></span>
+                        <span>/</span>
+                        <span id="total_steps"></span>
+                    </div>
+                    <!-- end progress count -->
 
-                </div>
-                <div id="workthough_content">
-                    you text here
-                </div>
-                <div class="prev-next">
-                    <input type="button" class="btn " value="<< prev" id="prev">
-                    <input type="button" class="btn " value="next >>" id="next">
+                    <div class="prev_next">
+                        <input type="button" class="btn " value="prev" id="prev">
+                        <input type="button" class="btn " value="next" id="next">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- end dialog -->
-    <!-- dialog -->
     <header>
         <div style="display: flex;">
+            <input type="button" value="?" id="help">
             <div id="about">
                 <a href="https://about.google.com/" id="">
                     About
@@ -45,9 +60,10 @@
         <div id="urc">
             <div><a href="https://mail.google.com/" id="gmail">Gmail</a><a href="https://images.google.com/">Images</a>
             </div>
-            <div id="account"><span class="material-icons" id="apps" title="Google apps" id="apps">apps</span><a
-                    class="link" id="sign_in" href="https://accounts.google.com/">Sign
-                    in</a></div>
+            <div id="account"><span class="material-icons" id="apps" title="Google apps" id="apps">apps</span>
+                <a class="link" id="sign_in" href="https://accounts.google.com/">Sign
+                    in</a>
+            </div>
         </div>
     </header>
     <div id="container"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />

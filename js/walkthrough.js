@@ -1,12 +1,19 @@
 
 let targets = [];
-let index = 0;
-let dailogElement = document.getElementsByClassName('workthrough-body')[0];
-dailogElement.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopPropagation();
-});
+let currentIndex = 0;
+let dialogElement = document.getElementById('workthrough_body');
+let dialogPointer = document.getElementById('dialog_pointer');
+let targetElement = null;
+
+
+
 let initialize = (arr) => {
+    currentIndex = 0;
+
+    dialogElement.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+    });
     document.getElementById('next').addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -17,90 +24,153 @@ let initialize = (arr) => {
         event.stopPropagation();
         prev();
     });
+    document.getElementById('close_btn').addEventListener('click', () => {
+        end();
+    });
     targets = arr;
-    showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
+    showWorkthroughDialog(targets[currentIndex].id, targets[currentIndex].offset_position, targets[currentIndex].content);
 
     console.log('this module has been Initialzed');
 }
+let showWorkthroughDialog = (targetElementId, offsetPosition, content, previousElementId) => {
+    targetElement = document.getElementById(targetElementId);
+    document.getElementById('shade').style.display = 'block';
 
-let showWorkthroughDialog = (targetElementId, offsetPosition, heading, content) => {
-    const targetElement = document.getElementById(targetElementId);
+    document.getElementById('step_count').innerHTML = currentIndex + 1;
+    document.getElementById('total_steps').innerHTML = targets.length;
     console.log(targetElement);
-    let headingElement = document.getElementById('workthough_heading');
-    headingElement.innerHTML = heading;
     let contentElement = document.getElementById('workthough_content');
     contentElement.innerHTML = content;
-    targetElement.appendChild(dailogElement);
+    targetElement.appendChild(dialogElement);
     setOffestPosition(offsetPosition);
-    dailogElement.classList.remove('hide');
-    targetElement.classList.add('relative');
+    getAndSetPointerPosition(offsetPosition);
+    dialogElement.classList.remove('hide');
+    targetElement.classList.add('highlight_target');
+    if (!targetElement.classList.contains('relative')) {
+        targetElement.classList.add('relative');
+    }
+    if (previousElementId) {
+        document.getElementById(previousElementId).classList.remove('highlight_target');
+    }
+
     targetElement.scrollIntoView({ behavior: 'smooth' });
-    if (index < 1) {
+    if (currentIndex < 1) {
         document.getElementById('prev').style.display = 'none';
     } else {
         document.getElementById('prev').style.display = 'block';
     }
 
-    if (index >= targets.length - 1) {
+    if (currentIndex >= targets.length - 1) {
         document.getElementById('next').style.display = 'none';
 
     } else {
         document.getElementById('next').style.display = 'block';
     }
+    // end
+}
+let getAndSetPointerPosition = offestPossition => {
+    switch (offestPossition) {
+        case 'bottom_left':
+            setPointerPosition('right_pointer')
+            break;
+        case 'left':
+            setPointerPosition('right_pointer')
+            break;
+        case 'bottom_center':
+            setPointerPosition('top_center_pointer')
+            break;
+        case 'top_right':
+            setPointerPosition('right_pointer')
+            break;
+        case 'right':
+            setPointerPosition('left_pointer')
+            break;
+
+        default:
+            setPointerPosition('left_pointer')
+
+            break;
+    }
+}
+let setPointerPosition = pointerPosition => {
+    if (dialogPointer.classList.contains('left_pointer')) {
+        dialogPointer.classList.remove('left_pointer');
+    }
+    if (dialogPointer.classList.contains('right_pointer')) {
+        dialogPointer.classList.remove('right_pointer');
+    }
+    if (dialogPointer.classList.contains('top_center_pointer')) {
+        dialogPointer.classList.remove('top_center_pointer');
+    }
+    dialogPointer.classList.add(pointerPosition);
 }
 let setOffestPosition = offestPossition => {
-    if (dailogElement.classList.contains('bottom-left')) {
-        dailogElement.classList.remove('bottom-left');
+    if (dialogElement.classList.contains('bottom_left')) {
+        dialogElement.classList.remove('bottom_left');
     }
-    if (dailogElement.classList.contains('bottom-right')) {
-        dailogElement.classList.remove('bottom-right');
+    if (dialogElement.classList.contains('bottom_right')) {
+        dialogElement.classList.remove('bottom_right');
     }
-    if (dailogElement.classList.contains('bottom-right')) {
-        dailogElement.classList.remove('bottom-right');
+    if (dialogElement.classList.contains('bottom_right')) {
+        dialogElement.classList.remove('bottom_right');
     }
-    if (dailogElement.classList.contains('bottom-center')) {
-        dailogElement.classList.remove('bottom-center');
+    if (dialogElement.classList.contains('bottom_center')) {
+        dialogElement.classList.remove('bottom_center');
     }
-    if (dailogElement.classList.contains('top-right')) {
-        dailogElement.classList.remove('top-right');
+    if (dialogElement.classList.contains('top_right')) {
+        dialogElement.classList.remove('top_right');
     }
-    if (dailogElement.classList.contains('top-left')) {
-        dailogElement.classList.remove('top-left');
+    if (dialogElement.classList.contains('top_left')) {
+        dialogElement.classList.remove('top_left');
     }
-    dailogElement.classList.add(offestPossition);
+    if (dialogElement.classList.contains('left')) {
+        dialogElement.classList.remove('left');
+    }
+    if (dialogElement.classList.contains('right')) {
+        dialogElement.classList.remove('right')
+    }
+    dialogElement.classList.add(offestPossition);
 }
+
+let end = () => {
+    currentIndex = 0;
+    document.getElementById(targets[currentIndex].id).classList.remove('highlight_target');
+    dialogElement.classList.add('hide');
+    dialogElement.classList.remove('show');
+    document.getElementById('shade').style.display = 'none';
+}
+
 let next = () => {
 
     let last = targets.length - 1;
-    if (index < targets.length - 1) {
+    if (currentIndex < targets.length - 1) {
 
-        index++;
-        console.log(targets[index].offset_position)
+        currentIndex++;
+        console.log(targets[currentIndex].offset_position)
 
-        showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
-        console.log(index)
+        showWorkthroughDialog(targets[currentIndex].id, targets[currentIndex].offset_position, targets[currentIndex].content, targets[currentIndex - 1].id);
+        console.log(currentIndex)
     }
     else {
-        index = last;
-        showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
-        console.log(index)
+        currentIndex = last;
+        showWorkthroughDialog(targets[currentIndex].id, targets[currentIndex].offset_position, targets[currentIndex].content);
+        console.log(currentIndex)
 
     }
 
 };
 let prev = () => {
-    if (index > 0) {
-        console.log(`current target is ${targets[index]}`);
-        index--;
-        showWorkthroughDialog(targets[index].id, targets[index].offset_position, targets[index].heading, targets[index].content);
+    if (currentIndex > 0) {
+        console.log(`current target is ${targets[currentIndex]}`);
+        currentIndex--;
+        showWorkthroughDialog(targets[currentIndex].id, targets[currentIndex].offset_position, targets[currentIndex].content, targets[currentIndex + 1].id);
 
     }
     else {
-        index = 0
-        console.log(`current target is  ${targets[index]}`)
+        currentIndex = 0
+        console.log(`current target is  ${targets[currentIndex]}`)
 
     }
 
 };
-
 export { initialize, next, prev, }
